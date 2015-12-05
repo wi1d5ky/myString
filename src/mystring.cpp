@@ -2,8 +2,6 @@
 #include <iostream>
 #include <cstring>
 
-constexpr int MaxStrLen = 1000;
-
 // ================================
 // ========= Constructor ==========
 // ================================
@@ -177,7 +175,7 @@ void String::clear()
 void String::swap (String & rhs)
 {
 	int tmp_size = size_,
-		tmp_capa = capacity_;
+			tmp_capa = capacity_;
 	char * tmp_str = str_;
 
 	size_ = rhs.size_;
@@ -192,9 +190,13 @@ void String::swap (String & rhs)
 
 std::istream & operator >> (std::istream & is, String & rhs)
 {
-	char tmp[MaxStrLen];
-	is >> tmp;
-	rhs = tmp;
+	while(1)
+	{
+		char c = getchar();
+		if(c =='\n')
+			break;
+		rhs += c;
+	}
 	return is;
 }
 

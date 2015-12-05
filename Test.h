@@ -49,8 +49,16 @@ TEST_F(string_test, size_and_length)
 	EXPECT_EQ(u.length(), (size_t) 0);
 }
 
-void read_write(String & str) {str[2] = 'T';}
-void read_only(const String &str) { char c = str[1];}
+// For Next Test
+void read_write(String & str)
+{
+	str[2] = 'T';
+}
+void read_only(const String &str)
+{
+	char c = str[1];
+	EXPECT_EQ(c, 'T');
+}
 
 TEST_F(string_test, get_item_by_id)
 {
@@ -65,13 +73,13 @@ TEST_F(string_test, append)
 {
 	char c[] = "12";
 	String	s1 = "ab", s2 = "cd", s3 = "ef",
-			s4 = s1 + s2 + s3,
-			s5 = s1 + c + s2,
-			s6 = s1 + "gh",
-			s7 = "ij" + s2,
-			s8 = c + s3,
-			s9 = s1 + 'k',
-			s10 = 'l' + s1;
+					s4 = s1 + s2 + s3,
+					s5 = s1 + c + s2,
+					s6 = s1 + "gh",
+					s7 = "ij" + s2,
+					s8 = c + s3,
+					s9 = s1 + 'k',
+					s10 = 'l' + s1;
 	EXPECT_TRUE(same_str(s1.c_str(), "ab" ));
 	EXPECT_TRUE(same_str(s2.c_str(), "cd" ));
 	EXPECT_TRUE(same_str(s3.c_str(), "ef" ));
@@ -108,7 +116,7 @@ TEST_F(string_test, append)
 TEST_F(string_test, compare)
 {
 	String	s1 = "bbc", s2 = "bbc",
-			s3 = "bbb", s4 = "abc";
+					s3 = "bbb", s4 = "abc";
 	EXPECT_TRUE(s1 == s2);
 	EXPECT_TRUE(s1 >= s2);
 	EXPECT_TRUE(s1 <= s2);
@@ -137,12 +145,10 @@ TEST_F(string_test, swap)
 }
 
 
-//TEST_F(string_test, CinAndCout)
-//{
-//	std::cout << "What you input, should be outputed below." << std::endl;
-//	String s;
-//	std::cin >> s;
-//	std::cout << s << std::endl;
-//}
-
-
+TEST_F(string_test, CinAndCout)
+{
+	std::cout << "What you input, should be outputed below." << std::endl;
+	String s;
+	std::cin >> s;
+	std::cout << s << std::endl;
+}
