@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="runTest" />
+		<Option title="String" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -45,9 +45,9 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="Test.h" />
-		<Unit filename="include/String.h" />
+		<Unit filename="include/mystring.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/String.cpp" />
+		<Unit filename="src/mystring.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

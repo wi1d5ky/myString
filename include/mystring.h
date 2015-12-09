@@ -25,13 +25,6 @@ public:
 	char & operator [] (int i);				// non-const
 	const char & operator [] (int i) const;	// const
 
-	// compare
-	bool operator > (const String & refs);
-	bool operator < (const String & refs);
-	bool operator >= (const String & refs);
-	bool operator <= (const String & refs);
-	bool operator == (const String & refs);
-
 	// append
 	String operator + (char c);
 	String operator + (const char * s);
@@ -58,6 +51,25 @@ public:
 
 	void clear();				// clear
 	void swap (String & str);	// swap
+		// compare
+	friend bool operator > (const String & lhs, const String & rhs);
+	friend bool operator > (const String & lhs, const char * rhc);
+	friend bool operator > (const char * lhc, const String & rhs);
+	friend bool operator < (const String & lhs, const String & rhs);
+	friend bool operator < (const String & lhs, const char * rhc);
+    friend bool operator < (const char * lhc, const String & rhs);
+    friend bool operator >= (const String & lhs, const String & rhs);
+    friend bool operator >= (const String & lhs, const char * rhc);
+    friend bool operator >= (const char * lhc, const String & rhs);
+    friend bool operator <= (const String & lhs, const String & rhs);
+    friend bool operator <= (const String & lhs, const char * rhc);
+    friend bool operator <= (const char * lhc, const String & rhs);
+    friend bool operator == (const String & lhs, const String & rhs);
+    friend bool operator == (const String & lhs, const char * rhc);
+    friend bool operator == (const char * lhc, const String & rhs);
+    friend bool operator != (const String & lhs, const String & rhs);
+    friend bool operator != (const String & lhs, const char * rhc);
+    friend bool operator != (const char * lhc, const String & rhs);
 private:
 	char * str_;
 	size_t size_;

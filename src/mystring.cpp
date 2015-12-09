@@ -1,6 +1,7 @@
 #include "mystring.h"
 #include <iostream>
 #include <cstring>
+#include <cstdio>
 
 // ================================
 // ========= Constructor ==========
@@ -79,29 +80,89 @@ const char & String::operator [] (int i) const
 	return str_[i];
 }
 
-bool String::operator > (const String & rhs)
+bool operator > (const String & lhs, const String & rhs)
 {
-	return strcmp(str_, rhs.str_) > 0;
+    return strcmp(lhs.str_, rhs.str_) > 0;
 }
-
-bool String::operator >= (const String & rhs)
+bool operator > (const String & lhs, const char * rhc)
 {
-	return strcmp(str_, rhs.str_) >= 0;
+    String rhs(rhc);
+    return strcmp(lhs.str_, rhs.str_) > 0;
 }
-
-bool String::operator == (const String & rhs)
+bool operator > (const char * lhc, const String & rhs)
 {
-	return strcmp(str_, rhs.str_) == 0;
+    String lhs(lhc);
+    return strcmp(lhs.str_, rhs.str_) > 0;
 }
-
-bool String::operator <= (const String & rhs)
+bool operator < (const String & lhs, const String & rhs)
 {
-	return strcmp(str_, rhs.str_) <= 0;
+	return strcmp(lhs.str_, rhs.str_) < 0;
 }
-
-bool String::operator < (const String & rhs)
+bool operator < (const String & lhs, const char * rhc)
 {
-	return strcmp(str_, rhs.str_) < 0;
+    String rhs(rhc);
+    return strcmp(lhs.str_, rhs.str_) < 0;
+}
+bool operator < (const char * lhc, const String & rhs)
+{
+    String lhs(lhc);
+    return strcmp(lhs.str_, rhs.str_) < 0;
+}
+bool operator >= (const String & lhs, const String & rhs)
+{
+	return strcmp(lhs.str_, rhs.str_) >= 0;
+}
+bool operator >= (const String & lhs, const char * rhc)
+{
+    String rhs(rhc);
+    return strcmp(lhs.str_, rhs.str_) >= 0;
+}
+bool operator >= (const char * lhc, const String & rhs)
+{
+    String lhs(lhc);
+    return strcmp(lhs.str_, rhs.str_) >= 0;
+}
+bool operator <= (const String & lhs, const String & rhs)
+{
+	return strcmp(lhs.str_, rhs.str_) <= 0;
+}
+bool operator <= (const String & lhs, const char * rhc)
+{
+    String rhs(rhc);
+    return strcmp(lhs.str_, rhs.str_) <= 0;
+}
+bool operator <= (const char * lhc, const String & rhs)
+{
+    String lhs(lhc);
+    return strcmp(lhs.str_, rhs.str_) <= 0;
+}
+bool operator == (const String & lhs, const String & rhs)
+{
+	return strcmp(lhs.str_, rhs.str_) == 0;
+}
+bool operator == (const String & lhs, const char * rhc)
+{
+    String rhs(rhc);
+    return strcmp(lhs.str_, rhs.str_) == 0;
+}
+bool operator == (const char * lhc, const String & rhs)
+{
+    String lhs(lhc);
+    return strcmp(lhs.str_, rhs.str_) == 0;
+}
+bool operator != (const String & lhs, const String & rhs)
+{
+	return strcmp(lhs.str_, rhs.str_) != 0;
+}
+bool operator != (const String & lhs, const char * rhc)
+{
+    String rhs(rhc);
+    return strcmp(lhs.str_, rhs.str_) != 0;
+}
+bool operator != (const char * lhc, const String & rhs)
+{
+    String lhs(lhc);
+    return strcmp(lhs.str_, rhs.str_) != 0;
 }
 
 String String::operator + (const String & rhs)
