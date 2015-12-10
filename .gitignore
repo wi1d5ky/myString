@@ -30,3 +30,4 @@ bin/
 
 # Code::blocks
 *.depend
+*.layout

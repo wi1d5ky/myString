@@ -13,19 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="../gmock-1.7.0/gtest/include" />
-					<Add directory="../gmock-1.7.0/include" />
 					<Add directory="include" />
 				</Compiler>
-				<Linker>
-					<Add option="-lgtest -pthread" />
-					<Add library="../gmock-1.7.0/gtest/lib/.libs/libgtest.a" />
-					<Add library="../gmock-1.7.0/gtest/lib/.libs/libgtest_main.a" />
-					<Add library="../gmock-1.7.0/lib/.libs/libgmock.a" />
-					<Add library="../gmock-1.7.0/lib/.libs/libgmock_main.a" />
-					<Add directory="../gmock-1.7.0/gtest/lib/.libs" />
-					<Add directory="../gmock-1.7.0/lib/.libs" />
-				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/runTest" prefix_auto="1" extension_auto="1" />
@@ -44,7 +33,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Test.h" />
 		<Unit filename="include/mystring.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/mystring.cpp" />

@@ -251,6 +251,7 @@ void String::swap (String & rhs)
 
 std::istream & operator >> (std::istream & is, String & rhs)
 {
+	rhs = "";
 	while(1)
 	{
 		char c = getchar();
